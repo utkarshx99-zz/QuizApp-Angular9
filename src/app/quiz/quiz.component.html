@@ -3,24 +3,51 @@
       <form [formGroup]="angForm" novalidate>
         <div class="form-group">
           <label class="col-md-4">Question Input</label>
-          <input type="text" class="form-control" formControlName="name" #name />
+          <input type="text" class="form-control" formControlName="questionValue" #questionValue />
         </div>
-        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
-          <div *ngIf="angForm.controls['name'].errors.required">
-            Name is required.
+        <div *ngIf="angForm.controls['questionValue'].invalid && (angForm.controls['questionValue'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['questionValue'].errors.required">
+            Question is required.
           </div>
         </div>
         <div class="form-group">
           <label class="col-md-4">Choice 1</label>
-          <input type="text" class="form-control" formControlName="price" #price/>
+          <input type="text" class="form-control" formControlName="choice1" #choice1/>
         </div>
-        <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
-          <div *ngIf="angForm.controls['price'].errors.required">
-            Price is required.
+        <div *ngIf="angForm.controls['choice1'].invalid && (angForm.controls['choice1'].dirty || angForm.controls['choice1'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['choice1'].errors.required">
+            Choice1 is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Choice 2</label>
+          <input type="text" class="form-control" formControlName="choice2" #choice2/>
+        </div>
+        <div *ngIf="angForm.controls['choice2'].invalid && (angForm.controls['choice2'].dirty || angForm.controls['choice2'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['choice2'].errors.required">
+            Choice2 is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Choice 3</label>
+          <input type="text" class="form-control" formControlName="choice3" #choice3/>
+        </div>
+        <div *ngIf="angForm.controls['choice3'].invalid && (angForm.controls['choice3'].dirty || angForm.controls['choice3'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['choice3'].errors.required">
+            Choice3 is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Choice 4</label>
+          <input type="text" class="form-control" formControlName="choice4" #choice4/>
+        </div>
+        <div *ngIf="angForm.controls['choice4'].invalid && (angForm.controls['choice4'].dirty || angForm.controls['choice4'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['choice4'].errors.required">
+            Choice4 is required.
           </div>
         </div>
           <div class="form-group">
-            <button (click)="addShare(name.value, price.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
+            <button (click)="addQuestion(questionValue.value, choice1.value, choice2.value, choice3.value, choice4.value)" [disabled]="angForm.pristine || angForm.invalid" class="btn btn-primary">Add</button>
           </div>
       </form>
     </div>

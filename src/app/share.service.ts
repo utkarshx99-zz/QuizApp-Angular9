@@ -10,7 +10,7 @@ export class ShareService {
   private basePath = '/shares';
   constructor(private db: AngularFireDatabase) { }
 
-  addShare(data) {
+  addQuestion(data) {
   const obj = this.db.database.ref(this.basePath);
   obj.push(data);
   console.log('Success');

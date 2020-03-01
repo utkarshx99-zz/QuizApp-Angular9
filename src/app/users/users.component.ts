@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizComponent } from '../quiz/quiz.component';
 
 @Component({
   selector: 'app-users',

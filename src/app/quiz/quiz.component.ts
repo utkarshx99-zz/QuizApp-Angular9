@@ -15,16 +15,22 @@ export class QuizComponent implements OnInit {
    }
   createForm() {
     this.angForm = this.fb.group({
-      name: ['', Validators.required ],
-      price: ['', Validators.required ]
+      questionValue : ['', Validators.required ],
+      choice1: ['', Validators.required ],
+      choice2: ['', Validators.required],
+      choice3: ['', Validators.required],
+      choice4: ['', Validators.required],
    });
   }
-  addShare(name, price) {
+  addQuestion(questionValue, choice1, choice2, choice3, choice4) {
      const dataObj = {
-      name: name,
-      price: price
+      questionValue: questionValue,
+      choice1: choice1,
+      choice2: choice2,
+      choice3: choice3,
+      choice4: choice4
     };
-    this.shareservice.addShare(dataObj);
+    this.shareservice.addQuestion(dataObj);
   }
 
   ngOnInit(): void {
