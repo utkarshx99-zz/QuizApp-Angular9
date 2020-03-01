@@ -1,41 +1,24 @@
-<table class="table table-striped">
-    <tr>
-      <th>Share Name</th>
-      <th>Share Price</th>
-      <th>Share Price</th>
-      <th>Share Price</th>
-      <th>Share Price</th>
-    </tr>
-    <tr *ngFor="let share of shares | async">
-      <td>{{ share.questionValue }}</td>
-      <td>{{ share.choice1 }}</td>
-      <td>{{ share.choice2 }}</td>
-      <td>{{ share.choice3 }}</td>
-      <td>{{ share.choice4 }}</td>
-    </tr>
-  </table>
-
-  <div class="card" *ngFor="let share of shares | async">
-      <div class="card-body text-center">
-        {{ share.questionValue }}
-      </div>
+<div class="card" *ngFor="let share of shares | async">
+  <div class="card-body text-center">
+    {{ share.questionValue }}
+    </div>
       <div class="row">
         <div class="col-6">
-            <button class="btn btn-primary btn-block" role="alert">{{ share.choice1 }}</button>
+          <button class="btn btn-primary btn-block" role="alert">{{ share.choice1 }}</button>
         </div>
-        <div class="col-6">
+      <div class="col-6">
           <button class="btn btn-primary btn-block" role="alert">{{ share.choice2 }}</button>
-        </div>
+      </div>
 
-    </div>
-    <br/>
+  </div>
+  <br/>
     <div class="row">
-        <div class="col-6">
-          <button class="btn btn-primary btn-block" role="alert">{{ share.choice3 }}</button>
-        </div>
-        <div class="col-6">
-          <button class="btn btn-primary btn-block" role="alert">{{ share.choice4 }}</button>
-        </div>
+      <div class="col-6">
+        <button class="btn btn-primary btn-block" role="alert">{{ share.choice3 }}</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary btn-block" role="alert">{{ share.choice4 }}</button>
+      </div>
     </div>
-    <br/>
+  <br/>
 </div>

@@ -20,15 +20,17 @@ export class QuizComponent implements OnInit {
       choice2: ['', Validators.required],
       choice3: ['', Validators.required],
       choice4: ['', Validators.required],
+      correctOption: ['', Validators.required]
    });
   }
-  addQuestion(questionValue, choice1, choice2, choice3, choice4) {
+  addQuestion(questionValue, choice1, choice2, choice3, choice4,correctOption) {
      const dataObj = {
       questionValue: questionValue,
       choice1: choice1,
       choice2: choice2,
       choice3: choice3,
-      choice4: choice4
+      choice4: choice4,
+      correctOption: correctOption
     };
     this.shareservice.addQuestion(dataObj);
   }
