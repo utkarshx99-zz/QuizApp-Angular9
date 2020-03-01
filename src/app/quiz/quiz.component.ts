@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from '../share.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { UsersComponent } from '../users/users.component';
 
 @Component({
   selector: 'app-quiz',
