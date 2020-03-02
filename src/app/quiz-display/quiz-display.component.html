@@ -19,19 +19,24 @@
     </div>
     <br/>
     <div class="form-action">
-        <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
+        <input (input)="onAnswerInput($event.target.value) " type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
     </div>
     <br>
     <div class="form-action">
-        <button *ngIf="share.correctOption === answer; else notShow" class="btn btn-success btn-block">
+        <button *ngIf="share.correctOption === answer" class="btn btn-success btn-block">
             Your are right. {{ share.correctOption }} is the correct answer
-    </button>
+        </button>
     </div>
-    <ng-template #notShow>
+    <div class="form-action">
+        <button *ngIf="share.correctOption!=answer && answer!=''" class="btn btn-danger btn-block">
+            Your Answer is Incorrect
+        </button>
+    </div>
+    <!-- <ng-template #notShow>
         <div class="form-action">
             <button class="btn btn-danger btn-block">
                 No Your Answer is Wrong
             </button>
         </div>
-    </ng-template>
+    </ng-template> -->
 </div>
