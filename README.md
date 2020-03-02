@@ -1,4 +1,4 @@
-# 80% Finished Application. Still some minor features are left to be added
+# App is 100% usable. Just Needs Some Polishing
 
 # QuizApp
 
