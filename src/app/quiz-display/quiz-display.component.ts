@@ -8,6 +8,9 @@ import { ShareService } from '../share.service';
   styleUrls: ['./quiz-display.component.css']
 })
 export class QuizDisplayComponent implements OnInit {
+
+  answerOptions = ['ABCD'];
+
   answer = '';
 
   public shares: Observable<any[]>;
@@ -23,9 +26,5 @@ export class QuizDisplayComponent implements OnInit {
   onAnswerInput(value: string) {
     this.answer = value;
   }
-
-  // onWrongAnswer(value: string) {
-  //   this.wrongAnswer = value;
-  // }
 
 }

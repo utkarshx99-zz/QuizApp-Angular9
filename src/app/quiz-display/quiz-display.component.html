@@ -22,7 +22,7 @@
         <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
     </div>
     <br>
-    <div class="form-action">
+    <div *ngFor="let answerOption of answerOptions" class="form-action">
         <button *ngIf="share.correctOption === answer" class="btn btn-success btn-block">
             Your are right. {{ share.correctOption }} is the correct answer
         </button>
