@@ -24,4 +24,8 @@ export class QuizDisplayComponent implements OnInit {
     this.answer = value;
   }
 
+  // onWrongAnswer(value: string) {
+  //   this.wrongAnswer = value;
+  // }
+
 }
