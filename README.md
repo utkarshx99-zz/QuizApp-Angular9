@@ -1,6 +1,18 @@
+# 80% Finished Application. Still some minor features are left to be added
+
 # QuizApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+
+## Usage Instruction
+
+    1. Clone the project
+    2. Run the command 'npm install' to install the required node_modules
+    3. You are also required the install the following modules by running the following commands.
+        a) npm install bootstrap popper jquery --save
+        b) npm install firebase angularfire2 --save
+    4. Don't forget to import Bootstrap, Jquery, Popper in the angular.json file
+    5. Additionally you are also required to get your own Firebase API ID by creating a new project in firebase so that the data can be pushed and pulled from database. Import the API keys in the environment file.
 
 ## Development server
 

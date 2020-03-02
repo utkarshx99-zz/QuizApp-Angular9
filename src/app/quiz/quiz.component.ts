@@ -24,16 +24,16 @@ export class QuizComponent implements OnInit {
       correctOption: ['', Validators.required]
    });
   }
-  addQuestion(questionValue, choice1, choice2, choice3, choice4,correctOption) {
+  addQuestion(questionValue, choice1, choice2, choice3, choice4, correctOption) {
      const dataObj = {
-      questionValue: questionValue,
-      choice1: choice1,
-      choice2: choice2,
-      choice3: choice3,
-      choice4: choice4,
-      correctOption: correctOption
+      questionValue,
+      choice1,
+      choice2,
+      choice3,
+      choice4,
+      correctOption
     };
-    this.shareservice.addQuestion(dataObj);
+     this.shareservice.addQuestion(dataObj);
   }
 
   ngOnInit(): void {

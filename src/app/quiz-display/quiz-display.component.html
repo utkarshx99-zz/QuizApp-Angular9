@@ -1,32 +1,37 @@
 <div class="card" *ngFor="let share of shares | async">
-  <div class="card-body text-center">{{ share.questionValue }}</div>
-      <div class="row">
-        <div class="col-6">
-          <button class="btn btn-primary btn-block" role="alert">A. {{ share.choice1 }}</button>
-        </div>
-        <div class="col-6">
-          <button class="btn btn-primary btn-block" role="alert">B. {{ share.choice2 }}</button>
-        </div>
-      </div>
-  <br/>
+    <div class="card-body text-center">{{ share.questionValue }}</div>
     <div class="row">
-      <div class="col-6">
-        <button class="btn btn-primary btn-block" role="alert">C. {{ share.choice3 }}</button>
-      </div>
-      <div class="col-6">
-        <button class="btn btn-primary btn-block" role="alert">D. {{ share.choice4 }}</button>
-      </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">A. {{ share.choice1 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">B. {{ share.choice2 }}</button>
+        </div>
     </div>
-  <br/>
-  <div class="form-action">
-    <input
-      (input)="onAnswerInput($event.target.value)" 
-      type="text" 
-      class="btn btn-warning btn-block" 
-      placeholder="Input Answer here"/>
-  </div>
-  <br>
-  <div class="form-action">
-    <button *ngIf="share.correctOption === answer" class="btn btn-success btn-block">Your Answer Is Correct!!. {{ share.correctOption }} is the answer</button>
-  </div>
+    <br/>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">C. {{ share.choice3 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">D. {{ share.choice4 }}</button>
+        </div>
+    </div>
+    <br/>
+    <div class="form-action">
+        <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
+    </div>
+    <br>
+    <div class="form-action">
+        <button *ngIf="share.correctOption === answer; else notShow" class="btn btn-success btn-block">
+            Your are right. {{ share.correctOption }} is the correct answer
+    </button>
+    </div>
+    <ng-template #notShow>
+        <div class="form-action">
+            <button class="btn btn-danger btn-block">
+                No Your Answer is Wrong
+            </button>
+        </div>
+    </ng-template>
 </div>
