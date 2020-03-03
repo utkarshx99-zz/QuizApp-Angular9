@@ -17,7 +17,7 @@ import { ShareService } from './share.service';
     AppComponent,
     UsersComponent,
     QuizComponent,
-    QuizDisplayComponent
+    QuizDisplayComponent,
   ],
   imports: [
     BrowserModule,

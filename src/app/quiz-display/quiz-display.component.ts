@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ShareService } from '../share.service';
 
