@@ -12,7 +12,8 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 export class QuizComponent implements OnInit {
 
   public users: Observable<any[]>;
-  show = false;
+  public showDialog = false;
+  public buttonName: any = 'Add More Question';
 
   angForm: FormGroup;
   constructor(private shareservice: ShareService, private fb: FormBuilder, private userservice: UserService) {
@@ -75,7 +76,14 @@ export class QuizComponent implements OnInit {
   }
 
   toggle() {
-    this.show = !this.show;
+    this.showDialog = !this.showDialog;
+
+    // CHANGE THE TEXT OF THE BUTTON.
+    if (this.showDialog) {
+      this.buttonName = 'Hide Login Form!';
+    } else {
+      this.buttonName = 'Show Login Form!';
+    }
   }
 
 }
