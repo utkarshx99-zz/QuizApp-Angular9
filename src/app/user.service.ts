@@ -5,19 +5,18 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UserDisplayService {
+export class UserService {
 
-  private basePath = '/userdisplays';
-  constructor(private db: AngularFireDatabase) {}
+  private basePath = '/user';
+  constructor(private dbs: AngularFireDatabase) { }
 
   addUser(data) {
-    const obj = this.db.database.ref(this.basePath);
+    const obj = this.dbs.database.ref(this.basePath);
     obj.push(data);
-    console.log('Sucess');
+    console.log('Success');
   }
 
   getUsers(path): Observable<any[]> {
-    return this.db.list(path).valueChanges();
+    return this.dbs.list(path).valueChanges();
   }
-
 }

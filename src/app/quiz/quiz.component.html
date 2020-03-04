@@ -1,10 +1,24 @@
 <br>
+<div class="container-fluid card" *ngFor="let user of users | async">
+    <div class="row">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6 pull-left">
+                    <h5 role="alert">Username: {{ user.username }}</h5>
+                </div>
+                <div class="col-6 pull-right">
+                    <h5 role="alert">Email ID: {{ user.emailid }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <br>
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-body">
             <form class="card text-center" [formGroup]="angForm" novalidate>
-                <table class="table table-bordered">
+                <table class="table">
                     <tbody>
                         <td colspan="10">
                             <div class="form-group">
@@ -366,12 +380,18 @@
                         </td>
                     </tbody>
                     <tbody>
-                        <td>
+                        <td colspan="10">
+                            <button (click)="toggle()" class="btn btn-primary">
+                                Add More Question
+                            </button>
+                        </td>
+
+                        <td colspan="10">
                             <button routerLink="/quiz-display" (click)="addQuestion(q1.value,q1ch1.value,q1ch2.value,q1ch3.value,q1ch4.value,q1correctOption.value,
-                        q2.value,q2ch1.value,q2ch2.value,q2ch3.value,q2ch4.value,q2correctOption.value,
-                        q3.value,q3ch1.value,q3ch2.value,q3ch3.value,q3ch4.value,q3correctOption.value,
-                        q4.value,q4ch1.value,q4ch2.value,q4ch3.value,q4ch4.value,q4correctOption.value,
-                        q5.value,q5ch1.value,q5ch2.value,q5ch3.value,q5ch4.value,q5correctOption.value)" class="btn btn-primary">Submit</button>
+                                                q2.value,q2ch1.value,q2ch2.value,q2ch3.value,q2ch4.value,q2correctOption.value,
+                                                q3.value,q3ch1.value,q3ch2.value,q3ch3.value,q3ch4.value,q3correctOption.value,
+                                                q4.value,q4ch1.value,q4ch2.value,q4ch3.value,q4ch4.value,q4correctOption.value,
+                                                q5.value,q5ch1.value,q5ch2.value,q5ch3.value,q5ch4.value,q5correctOption.value)" class="btn btn-primary">Submit</button>
                         </td>
                     </tbody>
                 </table>

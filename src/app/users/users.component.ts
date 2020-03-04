@@ -1,5 +1,5 @@
+import { UserService } from './../user.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { UserDisplayService } from './../user-display.service';
 import { Component, OnInit, Input, Output } from '@angular/core';
 
 
@@ -11,7 +11,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 export class UsersComponent implements OnInit {
 
   userForm: FormGroup;
-  constructor(private userservice: UserDisplayService, private uf: FormBuilder) {
+  constructor(private userservice: UserService, private uf: FormBuilder) {
     this.createUserForm();
   }
 

@@ -1,7 +1,8 @@
+import { UserService } from './../user.service';
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { ShareService } from '../share.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
-import { UsersComponent } from '../users/users.component';
 
 @Component({
   selector: 'app-quiz',
@@ -10,8 +11,11 @@ import { UsersComponent } from '../users/users.component';
 })
 export class QuizComponent implements OnInit {
 
+  public users: Observable<any[]>;
+  show = false;
+
   angForm: FormGroup;
-  constructor(private shareservice: ShareService, private fb: FormBuilder) {
+  constructor(private shareservice: ShareService, private fb: FormBuilder, private userservice: UserService) {
     this.createForm();
    }
   createForm() {
@@ -48,11 +52,13 @@ export class QuizComponent implements OnInit {
       q5correctOption: ['', Validators.required]
    });
   }
-  addQuestion(q1, q1ch1, q1ch2, q1ch3, q1ch4, q1correctOption, q2, q2ch1, q2ch2, q2ch3, q2ch4, q2correctOption,
+  addQuestion(q1, q1ch1, q1ch2, q1ch3, q1ch4, q1correctOption,
+              q2, q2ch1, q2ch2, q2ch3, q2ch4, q2correctOption,
               q3, q3ch1, q3ch2, q3ch3, q3ch4, q3correctOption,
               q4, q4ch1, q4ch2, q4ch3, q4ch4, q4correctOption,
               q5, q5ch1, q5ch2, q5ch3, q5ch4, q5correctOption) {
-     const dataObj = {q1, q1ch1, q1ch2, q1ch3, q1ch4, q1correctOption, q2, q2ch1, q2ch2, q2ch3, q2ch4, q2correctOption,
+     const dataObj = {q1, q1ch1, q1ch2, q1ch3, q1ch4, q1correctOption,
+       q2, q2ch1, q2ch2, q2ch3, q2ch4, q2correctOption,
        q3, q3ch1, q3ch2, q3ch3, q3ch4, q3correctOption,
        q4, q4ch1, q4ch2, q4ch3, q4ch4, q4correctOption,
        q5, q5ch1, q5ch2, q5ch3, q5ch4, q5correctOption
@@ -60,7 +66,16 @@ export class QuizComponent implements OnInit {
      this.shareservice.addQuestion(dataObj);
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.users = this.getUsers('/user');
+  }
+
+  getUsers(path) {
+    return this.userservice.getUsers(path);
+  }
+
+  toggle() {
+    this.show = !this.show;
   }
 
 }

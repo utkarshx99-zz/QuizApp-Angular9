@@ -1,4 +1,4 @@
-import { UserDisplayService } from './user-display.service';
+import { UserService } from './user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -12,6 +12,7 @@ import { QuizComponent } from './quiz/quiz.component';
 import { QuizDisplayComponent } from './quiz-display/quiz-display.component';
 import { RouterModule } from '@angular/router';
 import { ShareService } from './share.service';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { ShareService } from './share.service';
     ]),
     ReactiveFormsModule
   ],
-  providers: [ShareService, UserDisplayService],
+  providers: [ShareService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,20 @@
+<br>
+<div class="container-fluid card" *ngFor="let user of users | async">
+    <div class="row">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6 pull-left">
+                    <h5 role="alert">Username: {{ user.username }}</h5>
+                </div>
+                <div class="col-6 pull-right">
+                    <h5 role="alert">Email ID: {{ user.emailid }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
 <div class="card" *ngFor="let share of shares | async">
-
     <div class="card-body text-center">{{ share.q1 }}</div>
     <div class="row">
         <div class="col-6">
