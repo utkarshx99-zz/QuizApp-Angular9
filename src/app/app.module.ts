@@ -1,3 +1,4 @@
+import { UserDisplayService } from './user-display.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -32,7 +33,7 @@ import { ShareService } from './share.service';
     ]),
     ReactiveFormsModule
   ],
-  providers: [ShareService],
+  providers: [ShareService, UserDisplayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

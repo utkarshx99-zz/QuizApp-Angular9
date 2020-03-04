@@ -48,69 +48,15 @@ export class QuizComponent implements OnInit {
       q5correctOption: ['', Validators.required]
    });
   }
-  addQuestion(
-    q1,
-    q1ch1,
-    q1ch2,
-    q1ch3,
-    q1ch4,
-    q1correctOption,
-    q2,
-    q2ch1,
-    q2ch2,
-    q2ch3,
-    q2ch4,
-    q2correctOption,
-    q3,
-    q3ch1,
-    q3ch2,
-    q3ch3,
-    q3ch4,
-    q3correctOption,
-    q4,
-    q4ch1,
-    q4ch2,
-    q4ch3,
-    q4ch4,
-    q4correctOption,
-    q5,
-    q5ch1,
-    q5ch2,
-    q5ch3,
-    q5ch4,
-    q5correctOption) {
-     const dataObj = {
-       q1,
-       q1ch1,
-       q1ch2,
-       q1ch3,
-       q1ch4,
-       q1correctOption,
-       q2,
-       q2ch1,
-       q2ch2,
-       q2ch3,
-       q2ch4,
-       q2correctOption,
-       q3,
-       q3ch1,
-       q3ch2,
-       q3ch3,
-       q3ch4,
-       q3correctOption,
-       q4,
-       q4ch1,
-       q4ch2,
-       q4ch3,
-       q4ch4,
-       q4correctOption,
-       q5,
-       q5ch1,
-       q5ch2,
-       q5ch3,
-       q5ch4,
-       q5correctOption
-    };
+  addQuestion(q1, q1ch1, q1ch2, q1ch3, q1ch4, q1correctOption, q2, q2ch1, q2ch2, q2ch3, q2ch4, q2correctOption,
+              q3, q3ch1, q3ch2, q3ch3, q3ch4, q3correctOption,
+              q4, q4ch1, q4ch2, q4ch3, q4ch4, q4correctOption,
+              q5, q5ch1, q5ch2, q5ch3, q5ch4, q5correctOption) {
+     const dataObj = {q1, q1ch1, q1ch2, q1ch3, q1ch4, q1correctOption, q2, q2ch1, q2ch2, q2ch3, q2ch4, q2correctOption,
+       q3, q3ch1, q3ch2, q3ch3, q3ch4, q3correctOption,
+       q4, q4ch1, q4ch2, q4ch3, q4ch4, q4correctOption,
+       q5, q5ch1, q5ch2, q5ch3, q5ch4, q5correctOption
+      };
      this.shareservice.addQuestion(dataObj);
   }
 

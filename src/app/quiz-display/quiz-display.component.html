@@ -1,20 +1,21 @@
 <div class="card" *ngFor="let share of shares | async">
-    <div class="card-body text-center">{{ share.questionValue }}</div>
+
+    <div class="card-body text-center">{{ share.q1 }}</div>
     <div class="row">
         <div class="col-6">
-            <button class="btn btn-primary btn-block" role="alert">A. {{ share.choice1 }}</button>
+            <button class="btn btn-primary btn-block" role="alert">A. {{ share.q1ch1 }}</button>
         </div>
         <div class="col-6">
-            <button class="btn btn-primary btn-block" role="alert">B. {{ share.choice2 }}</button>
+            <button class="btn btn-primary btn-block" role="alert">B. {{ share.q1ch2 }}</button>
         </div>
     </div>
     <br/>
     <div class="row">
         <div class="col-6">
-            <button class="btn btn-primary btn-block" role="alert">C. {{ share.choice3 }}</button>
+            <button class="btn btn-primary btn-block" role="alert">C. {{ share.q1ch3 }}</button>
         </div>
         <div class="col-6">
-            <button class="btn btn-primary btn-block" role="alert">D. {{ share.choice4 }}</button>
+            <button class="btn btn-primary btn-block" role="alert">D. {{ share.q1ch4 }}</button>
         </div>
     </div>
     <br/>
@@ -23,10 +24,129 @@
     </div>
     <br>
     <div *ngFor="let answerOption of answerOptions" class="form-action">
-        <button *ngIf="share.correctOption === answer" class="btn btn-success btn-block">
-            Your are right. {{ share.correctOption }} is the correct answer
+        <button *ngIf="share.q1correctOption === answer" class="btn btn-success btn-block">
+            Your are right. {{ share.q1correctOption }} is the correct answer
         </button>
     </div>
+
+    <div class="card-body text-center">{{ share.q2 }}</div>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">A. {{ share.q2ch1 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">B. {{ share.q2ch2 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">C. {{ share.q2ch3 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">D. {{ share.q2ch4 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="form-action">
+        <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
+    </div>
+    <br>
+    <div *ngFor="let answerOption of answerOptions" class="form-action">
+        <button *ngIf="share.q1correctOption === answer" class="btn btn-success btn-block">
+                    Your are right. {{ share.q2correctOption }} is the correct answer
+                </button>
+    </div>
+
+    <div class="card-body text-center">{{ share.q3 }}</div>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">A. {{ share.q3ch1 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">B. {{ share.q3ch2 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">C. {{ share.q3ch3 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">D. {{ share.q3ch4 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="form-action">
+        <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
+    </div>
+    <br>
+    <div *ngFor="let answerOption of answerOptions" class="form-action">
+        <button *ngIf="share.q3correctOption === answer" class="btn btn-success btn-block">
+                        Your are right. {{ share.q3correctOption }} is the correct answer
+                    </button>
+    </div>
+
+
+    <div class="card-body text-center">{{ share.q4 }}</div>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">A. {{ share.q4ch1 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">B. {{ share.q4ch2 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">C. {{ share.q4ch3 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">D. {{ share.q4ch4 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="form-action">
+        <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
+    </div>
+    <br>
+    <div *ngFor="let answerOption of answerOptions" class="form-action">
+        <button *ngIf="share.q4correctOption === answer" class="btn btn-success btn-block">
+                            Your are right. {{ share.q4correctOption }} is the correct answer
+                        </button>
+    </div>
+
+
+    <div class="card-body text-center">{{ share.q5 }}</div>
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">A. {{ share.q5ch1 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">B. {{ share.q5ch2 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">C. {{ share.q5ch3 }}</button>
+        </div>
+        <div class="col-6">
+            <button class="btn btn-primary btn-block" role="alert">D. {{ share.q5ch4 }}</button>
+        </div>
+    </div>
+    <br />
+    <div class="form-action">
+        <input (input)="onAnswerInput($event.target.value)" type="text" class="btn btn-warning btn-block" placeholder="Input Answer here" />
+    </div>
+    <br>
+    <div *ngFor="let answerOption of answerOptions" class="form-action">
+        <button *ngIf="share.q5correctOption === answer" class="btn btn-success btn-block">
+                                Your are right. {{ share.q5correctOption }} is the correct answer
+                            </button>
+    </div>
+
     <!-- <div class="form-action">
         <button *ngIf="share.correctOption!=answer && answer!=''" class="btn btn-danger btn-block">
             Your Answer is Incorrect
