@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { UsersComponent } from './users/users.component';
-import { QuizDisplayComponent } from './quiz-display/quiz-display.component';
-import { QuizComponent } from './quiz/quiz.component';
+import { QuizComponent } from './Components/quiz/quiz.component';
+import { QuizDisplayComponent } from './Components/quiz-display/quiz-display.component';
 
 const routes: Routes = [
   { path: 'quiz', component: QuizComponent },

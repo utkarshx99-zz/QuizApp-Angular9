@@ -1,6 +1,6 @@
-import { UserService } from './../user.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { UserService } from 'src/app/Services/user.service';
 
 
 @Component({

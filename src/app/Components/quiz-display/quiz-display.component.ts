@@ -1,7 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ShareService } from '../share.service';
-import { UserService } from '../user.service';
+import { UserService } from 'src/app/Services/user.service';
+import { QuizService } from 'src/app/Services/quiz.service';
 
 @Component({
   selector: 'app-quiz-display',
@@ -16,14 +16,14 @@ export class QuizDisplayComponent implements OnInit {
 
   public shares: Observable<any[]>;
   public users: Observable<any[]>;
-  constructor(private shareservice: ShareService, private userservice: UserService) { }
+  constructor(private quizservice: QuizService, private userservice: UserService) { }
 
   ngOnInit() {
     this.shares = this.getShares('/shares');
     this.users = this.getUsers('/user');
   }
   getShares(path) {
-    return this.shareservice.getShares(path);
+    return this.quizservice.getShares(path);
   }
 
   getUsers(path) {

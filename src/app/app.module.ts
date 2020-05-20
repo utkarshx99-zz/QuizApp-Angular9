@@ -1,4 +1,3 @@
-import { UserService } from './user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -7,11 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UsersComponent } from './users/users.component';
-import { QuizComponent } from './quiz/quiz.component';
-import { QuizDisplayComponent } from './quiz-display/quiz-display.component';
 import { RouterModule } from '@angular/router';
-import { ShareService } from './share.service';
+import { UsersComponent } from './Components/users/users.component';
+import { QuizComponent } from './Components/quiz/quiz.component';
+import { QuizDisplayComponent } from './Components/quiz-display/quiz-display.component';
+import { UserService } from './Services/user.service';
+import { QuizService } from './Services/quiz.service';
 
 
 @NgModule({
@@ -34,7 +34,7 @@ import { ShareService } from './share.service';
     ]),
     ReactiveFormsModule
   ],
-  providers: [ShareService, UserService],
+  providers: [QuizService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

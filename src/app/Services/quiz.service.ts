@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class ShareService {
+export class QuizService {
 
   private basePath = '/shares';
   constructor(private db: AngularFireDatabase) { }

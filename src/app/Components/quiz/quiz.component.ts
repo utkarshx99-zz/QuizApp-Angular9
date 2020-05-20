@@ -1,8 +1,8 @@
-import { UserService } from './../user.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { ShareService } from '../share.service';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { UserService } from 'src/app/Services/user.service';
+import { QuizService } from 'src/app/Services/quiz.service';
 
 @Component({
   selector: 'app-quiz',
@@ -16,7 +16,7 @@ export class QuizComponent implements OnInit {
   public buttonName: any = 'Add More Question';
 
   angForm: FormGroup;
-  constructor(private shareservice: ShareService, private fb: FormBuilder, private userservice: UserService) {
+  constructor(private quizservice: QuizService, private fb: FormBuilder, private userservice: UserService) {
     this.createForm();
    }
   createForm() {
@@ -64,7 +64,7 @@ export class QuizComponent implements OnInit {
        q4, q4ch1, q4ch2, q4ch3, q4ch4, q4correctOption,
        q5, q5ch1, q5ch2, q5ch3, q5ch4, q5correctOption
       };
-     this.shareservice.addQuestion(dataObj);
+     this.quizservice.addQuestion(dataObj);
   }
 
   ngOnInit() {
